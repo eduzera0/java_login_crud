@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import view.EsqueciSenhaView;
+import view.Loginview;
 
 /**
  *
@@ -43,6 +44,8 @@ public class EsqueciSenhaC {
         
         if(verificarSenha){
             JOptionPane.showMessageDialog(null, "Senha alterada com sucesso");
+            Loginview login = new Loginview();
+            login.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Dados Invalidos");
         }

@@ -51,6 +51,9 @@ public class MenuAdminView extends javax.swing.JFrame {
     
     public void mostrarUsuarios(){
         ArrayList<Usuario> lista = usuarioLista();
+        DefaultTableModel dm = (DefaultTableModel)jTabelaListagem.getModel();
+        dm.getDataVector().removeAllElements();
+        dm.fireTableDataChanged();
         DefaultTableModel model = (DefaultTableModel)jTabelaListagem.getModel();
         Object[] row = new Object[6];
         for(int i=0; i<lista.size(); i++){

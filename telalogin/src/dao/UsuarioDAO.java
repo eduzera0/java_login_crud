@@ -25,11 +25,11 @@ public class UsuarioDAO {
         this.connection = connection;
     }
     
-    public void insert(Usuario usuario) throws SQLException{
-        
+    public void insert(Usuario usuario) throws SQLException{        
            
-        String QUERY = "INSERT INTO usuarios (nome, email, senha, telefone, perg)" 
-                + "VALUES('"+usuario.getNome()+"', '"+usuario.getEmail()+"', '"+usuario.getSenha()+"', '"+usuario.getTelefone()+"', '"+usuario.getPerg()+"')";           
+        String QUERY = "INSERT INTO usuarios (email, nome, senha, telefone, perg)" 
+                + "VALUES('"+usuario.getEmail()+"', '"+usuario.getNome()+"', '"+usuario.getSenha()+"', '"+usuario.getTelefone()+"', '"+usuario.getPerg()+"')";           
+        System.out.println(QUERY);
         PreparedStatement statement = connection.prepareStatement(QUERY);
         statement.execute();
         connection.close();
@@ -38,6 +38,7 @@ public class UsuarioDAO {
 
     public boolean existeUsuario(Usuario usuario) throws SQLException {
         String QUERY = "SELECT * FROM usuarios WHERE email = '"+usuario.getEmail()+"' AND senha = '"+usuario.getSenha()+"'";
+        System.out.println(QUERY);
         PreparedStatement statement = connection.prepareStatement(QUERY);
         statement.execute();
         

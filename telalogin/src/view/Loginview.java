@@ -50,7 +50,7 @@ public class Loginview extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Usuario");
+        jLabel1.setText("Email");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 106, 47));
 
         jTextField2Email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

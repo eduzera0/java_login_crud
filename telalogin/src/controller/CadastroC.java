@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import view.Cadastroview;
+import view.Loginview;
 
 /**
  *
@@ -49,6 +50,10 @@ public class CadastroC {
             usuarioDao.insert(usuario);
             
             JOptionPane.showMessageDialog(null, "Usuario salvo com sucesso");
+            Loginview login = new Loginview();
+            login.setVisible(true);
+            Cadastroview cadastro = new Cadastroview();
+            cadastro.setVisible(false);
             
         } catch (SQLException ex) {
             Logger.getLogger(Cadastroview.class.getName()).log(Level.SEVERE, null, ex);
