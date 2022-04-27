@@ -107,47 +107,39 @@ public class MenuAdminView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Menu ADMIN");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 6, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
         getContentPane().add(jTextFieldMAid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 180, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Telefone");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 30));
         getContentPane().add(jTextFieldMAtelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 180, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Nome");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 66, -1, 40));
         getContentPane().add(jTextFieldMAnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 180, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Senha");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 126, -1, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Email");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 66, -1, 40));
         getContentPane().add(jTextFieldMAemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 180, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Ativo");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 126, -1, 40));
         getContentPane().add(jTextFieldMAativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 180, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Acesso (NORMAL ou ADMIN)");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 170, 50));
         getContentPane().add(jTextFieldMAnivelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 70, 180, 30));
@@ -186,7 +178,6 @@ public class MenuAdminView extends javax.swing.JFrame {
         getContentPane().add(jButtonMAD, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, 130, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Para deletar insira somente o Email");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 200, 20));
 
@@ -198,12 +189,16 @@ public class MenuAdminView extends javax.swing.JFrame {
                 "ID", "Email", "Nome", "Telefone", "Nivel de Acesso", "Ativo"
             }
         ));
+        jTabelaListagem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabelaListagemMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTabelaListagem);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 1000, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Jogo Favorito");
         jLabel12.setToolTipText("");
         jLabel12.setAutoscrolls(true);
@@ -233,6 +228,23 @@ public class MenuAdminView extends javax.swing.JFrame {
     private void jButtonMARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMARActionPerformed
         mostrarUsuarios();
     }//GEN-LAST:event_jButtonMARActionPerformed
+
+    private void jTabelaListagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaListagemMouseClicked
+        JTable table = (JTable) evt.getSource();
+        int i = table.getSelectedRow();
+        String id = (String) this.jTabelaListagem.getValueAt(i, 0);
+        this.jTextFieldMAid.setText(id);
+        String email = (String) this.jTabelaListagem.getValueAt(i, 1);
+        this.jTextFieldMAemail.setText(email);
+        String nome = (String) this.jTabelaListagem.getValueAt(i, 2);
+        this.jTextFieldMAnome.setText(nome);
+        String telefone = (String) this.jTabelaListagem.getValueAt(i, 3);
+        this.jTextFieldMAtelefone.setText(telefone);
+        String nivelUsuario = (String) this.jTabelaListagem.getValueAt(i, 4);
+        this.jTextFieldMAnivelUsuario.setText(nivelUsuario);
+        String ativo = (String) this.jTabelaListagem.getValueAt(i, 5);
+        this.jTextFieldMAativo.setText(ativo);
+    }//GEN-LAST:event_jTabelaListagemMouseClicked
 
     /**
      * @param args the command line arguments

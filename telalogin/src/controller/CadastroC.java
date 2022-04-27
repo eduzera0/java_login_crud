@@ -33,8 +33,9 @@ public class CadastroC {
         
         
         
-        String nome = view.getjTextFieldNome().getText();
+        
         String email = view.getjTextFieldEmail().getText();
+        String nome = view.getjTextFieldNome().getText();
         String telefone = view.getjTextFieldTelefone().getText();
         String senha = view.getjPasswordFieldSenha().getText();
         String perg = view.getjTextFieldperg1().getText();
@@ -52,8 +53,6 @@ public class CadastroC {
             JOptionPane.showMessageDialog(null, "Usuario salvo com sucesso");
             Loginview login = new Loginview();
             login.setVisible(true);
-            Cadastroview cadastro = new Cadastroview();
-            cadastro.setVisible(false);
             
         } catch (SQLException ex) {
             Logger.getLogger(Cadastroview.class.getName()).log(Level.SEVERE, null, ex);
@@ -74,4 +73,5 @@ public class CadastroC {
 	
 	return toReturn;
     }
+    
 }

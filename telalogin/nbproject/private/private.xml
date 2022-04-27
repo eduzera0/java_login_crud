@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/controller/MenuC.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/view/Loginview.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/controller/LoginC.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/model/Usuario.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/controller/CadastroC.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/view/Menuview.java</file>
-            <file>file:/C:/Users/eduar/Desktop/Java/java-things/telalogin/src/view/Cadastroview.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/controller/MenuAdminC.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/model/Usuario.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/view/MenuAdminView.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/view/Loginview.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/controller/CadastroC.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/view/EsqueciSenhaView.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/controller/EsqueciSenhaC.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/controller/LoginC.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/view/Cadastroview.java</file>
+            <file>file:/C:/Users/7839677/Downloads/java_login_crud-main/java_login_crud-main/telalogin/src/dao/UsuarioDAO.java</file>
         </group>
     </open-files>
 </project-private>

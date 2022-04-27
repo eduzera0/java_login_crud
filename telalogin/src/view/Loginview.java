@@ -108,14 +108,14 @@ public class Loginview extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Cadastroview telaDeCadastro = new Cadastroview();
         telaDeCadastro.setVisible(true);
-        Loginview telaDeLogin = new Loginview();
-        telaDeLogin.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         try {
             controller.autenticar();
+            this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(Loginview.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -124,8 +124,6 @@ public class Loginview extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         EsqueciSenhaView esqueciSenha = new EsqueciSenhaView();
         esqueciSenha.setVisible(true);
-        Loginview telaDeLogin = new Loginview();
-        telaDeLogin.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
