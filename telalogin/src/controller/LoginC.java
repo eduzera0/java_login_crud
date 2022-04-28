@@ -9,6 +9,8 @@ import dao.Conexao;
 import dao.UsuarioDAO;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import view.Loginview;
@@ -67,6 +69,7 @@ public class LoginC {
         
         Usuario usuarioAutenticar = new Usuario(email, senha);
         Usuario usuarioCargo = new Usuario(email);
+        Usuario usuarioduplicado = new Usuario(email);
         
         Connection conexao = new Conexao().getConnection();
         UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
@@ -87,6 +90,5 @@ public class LoginC {
             JOptionPane.showMessageDialog(view, "Usuario ou senha invalidos");
         }  
     }
-    
     
 }

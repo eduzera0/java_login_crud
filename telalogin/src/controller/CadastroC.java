@@ -29,34 +29,42 @@ public class CadastroC {
         this.view = view;
     }
     
-    public void salvaUsuario(){
-        
-        
-        
-        
+    public void salvaUsuario() throws SQLException{
         String email = view.getjTextFieldEmail().getText();
         String nome = view.getjTextFieldNome().getText();
         String telefone = view.getjTextFieldTelefone().getText();
         String senha = view.getjPasswordFieldSenha().getText();
         String perg = view.getjTextFieldperg1().getText();
+        String confirmSenha = view.getjPasswordFieldSenhaConfirm().getText();
         
-        senha = getSHA256(senha);
+        Usuario usuariodupli = new Usuario(email);
+        Connection conexao = new Conexao().getConnection();
+        UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
+        boolean emailusado = usuarioDao.emailDuplicado(usuariodupli);
         
-        Usuario usuario = new Usuario(email, nome, telefone, senha, perg);
-        
-        
-        try {
-            Connection conexao = new Conexao().getConnection();
-            UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
-            usuarioDao.insert(usuario);
+        if(senha.equals(confirmSenha)){
+            if(emailusado){
+                try {
+                    senha = getSHA256(senha);
+                    Usuario usuario = new Usuario(email, nome, telefone, senha, perg);
+                
+                    usuarioDao.insert(usuario);
             
-            JOptionPane.showMessageDialog(null, "Usuario salvo com sucesso");
-            Loginview login = new Loginview();
-            login.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Usuario salvo com sucesso");
+                    Loginview login = new Loginview();
+                    login.setVisible(true);
             
-        } catch (SQLException ex) {
-            Logger.getLogger(Cadastroview.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Cadastroview.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else {
+                JOptionPane.showMessageDialog(null, "Email ja cadastrado");
+            }
+
+        } else{
+            JOptionPane.showMessageDialog(null, "As senhas devem combinar");
         }
+        
     }
     
     public static String getSHA256(String senha){

@@ -138,5 +138,18 @@ public class UsuarioDAO {
         }
     }
     
+    public boolean emailDuplicado(Usuario usuario) throws SQLException{
+        String QUERY = "SELECT * FROM usuarios WHERE email = '"+usuario.getEmail()+"'";
+        PreparedStatement statement = connection.prepareStatement(QUERY);
+        statement.execute();
+        ResultSet resultSet = statement.getResultSet();
+        
+        if (resultSet.next()){
+            return false;
+        } else{
+            return true;
+        }
+    }
+    
     
 }
